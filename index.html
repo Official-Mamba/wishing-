@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+  
+    <style>
+
+  
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+ <div class="marquee"> 
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&amp;effect=fire"> 
+   <h8 class="font-effect-fire"> <marquee behavior="alternate">
+     🖤ABC🖤
+    </marquee> </h8> 
+    
+
+
+  
+<div id="battery-level">
+ </div>
+
+
+
+
+<div id="transbox"> 
+
+<div class="dpimg">
+ <div class="text1">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&amp;effect=fire"> 
+  
+ <h1  class="font-effect-fire" style="color:black;">
+  Happy Birthdy
+   
+   </h1> 
+ 
+  </div>
+ </div>
+</div>
+
+
+
+<div id="transbox2">
+ 
+  <div class="bdypic">
+    </div>
+    </div>
+    
+    
+        <div id="trans3"
+         
+       <div class="longtext">
+     <h2 class="ltext">  
+     
+     
+     
+      ------------ Hello world------------
+     
+     </h2>
+  </div>
+</div>
+  </div>
+  
+  
+  
+ 
+
+   <div class="mamba">
+    Created By Mamba
+   </div>
+
+
+
+
+<audio id="song" src="https://www.dropbox.com/scl/fi/vcpwxgkqho8f7wtg1xen7/editing.mp3?rlkey=ap1ki6y0ak76jkg9fcvk26u1e&st=fy605rvo&dl=1" autoplay style="display:none;"></audio>
+
+<script>
+  window.addEventListener('click', function () {
+    var audio = document.getElementById("song");
+    audio.play();
+    navigator.vibrate([50, 200, 50, 200, 50, 200, 50, 200, 100, 300, 100, 300, 100, 300, 100, 300]);
+    setInterval(function () {
+      navigator.vibrate([50, 200, 50, 200, 50, 200, 50, 200, 100, 300, 100, 300, 100, 300, 100, 300]);
+    }, 2000);
+  });
+  
+
+</script>
+
+                   
+
+ <script>
+ 
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.style.top = Math.random() * window.innerHeight + 'px';
+  heart.style.left = Math.random() * window.innerWidth + 'px';
+  
+  
+  heart.innerText = ".";
+  
+  
+  heart.style.animationDuration = (Math.random() * 7 + 5) + 's';
+  document.body.appendChild(heart);
+  setTimeout(() => {
+    heart.remove();
+  }, 6000); // 6 seconds
+}
+
+setInterval(createHeart,100);
+    
+  </script>
+    
+    
+    
+    
+    
+    
+ <script>
+  navigator.getBattery().then(battery => {
+    const batteryLevel = document.getElementById('battery-level');
+    batteryLevel.innerText = ` 𓈆↯⁩⁩⁩${battery.level * 100}%`;
+    
+    // Battery level ko update karein
+    battery.addEventListener('levelchange', () => {
+      batteryLevel.innerText = `𓈆↯⁩⁩⁩ ${battery.level * 100}%`;
+    });
+  });
+</script>
+
+  <script>
+    // Music ke audio file ko load karein
+    const audioFile = 'https://www.dropbox.com/scl/fi/vcpwxgkqho8f7wtg1xen7/editing.mp3?rlkey=ap1ki6y0ak76jkg9fcvk26u1e&st=fy605rvo&dl=1';
+    const audio = new Audio(audioFile);
+    const audioContext = new AudioContext();
+    const source = audioContext.createMediaElementSource(audio);
+    source.connect(audioContext.destination);
+    const analyser = audioContext.createAnalyser();
+    source.connect(analyser);
+    analyser.fftSize = 256;
+    const frequencyData = new Uint8Array(analyser.frequencyBinCount);
+
+    // Amplitude aur frequency ke basis par vibration pattern generate karein
+    function generateVibrationPattern() {
+      analyser.getByteFrequencyData(frequencyData);
+      const amplitude = Math.max(...frequencyData);
+      const frequency = frequencyData.indexOf(amplitude);
+      const vibrationPattern = [];
+
+      for (let i = 0; i < frequencyData.length; i++) {
+        const frequencyValue = frequencyData[i];
+        const amplitudeValue = amplitude;
+
+        if (amplitudeValue > 50 && frequencyValue > 100) {
+          vibrationPattern.push(500); // Vibrate for 500ms
+        } else {
+          vibrationPattern.push(0); // Don't vibrate
+        }
+      }
+
+      return vibrationPattern;
+    }
+
+    // Vibration pattern ko phone ke vibration motor par send karein
+    function vibrate() {
+      const vibrationPattern = generateVibrationPattern();
+      navigator.vibrate(vibrationPattern);
+    }
+
+    // Screen par click event listener
+    document.body.addEventListener('click', function() {
+      // Vibration code
+      navigator.vibrate(100);
+      
+      // Audio play karein
+      audio.play().catch(error => {
+        console.log('Error playing audio:', error);
+      });
+      
+      setInterval(vibrate, 100);
+    });
+
+    // Error handling
+    window.onerror = function(error) {
+      console.log('Error:', error);
+    };
+  </script>
+
+</body>
+
+</html>

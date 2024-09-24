@@ -1,0 +1,291 @@
+
+  
+body {
+  margin:0;
+ padding: 0;
+  background: linear-gradient(-45deg, rgba(247, 71, 10, 0.59) 0%, rgba(51, 227, 210, 0.57) 25%, rgba(251, 8, 8, 0.8) 50%, rgba(107, 51, 211, 0.6) 75%, rgba(105, 0, 255, 0.57) 100%) no-repeat;
+  background-size: 500%;
+  background-attachment: fixed;
+  animation: gradientAnim 6s ease infinite;
+}
+
+@keyframes gradientAnim {
+  0% {
+    background-position: 0% 25%;
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 75%;
+  }
+  75% {
+    background-position: 75% 100%;
+  }
+  100% {
+    background-position: 0% 25%;
+  }
+}
+
+
+
+/*1st start*/
+
+
+
+
+
+#transbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  height: 280px;
+  width: 93%;
+  border-radius: 20px;
+  background-color: #FFFFFF0F;
+}
+
+marquee {
+  width: 100%;
+  height: 40px;
+  margin: 0.5% 0.5%;
+  color: #F9FF06;
+  font-family: "Sofia", sans-serif;
+  font-size: 25px;
+  border-radius: 20px;
+  background-color: #290606D9;
+}
+
+.dpimg {
+  width: 150px;
+  height: 150px;
+  margin-top: 3%;
+  background-size:cover;
+  background-image: url('https://www.dropbox.com/scl/fi/abnxi5mq5z4n48vfzlcew/2d7578c9b67e48b1a670affd99fe4b23.jpg?rlkey=z19rwi330222bhpiglfg55r8a&st=6k2hgmvu&dl=1');
+  background-color: #8271712B;
+  border-radius: 50%;
+  position: relative;
+}
+
+
+h1{
+  text-align:center;
+  font-family:"Sofia",sans-serif;
+  padding: 0px;
+  font-size: 25px;
+  font-style: cursive;
+  margin-top:1.5%;
+}
+
+
+.text1 {
+  position: absolute;
+  width: 250px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 140%; /* replaced margin-top with top */
+  left: 50%; /* replaced margin-left with left */
+  transform: translate(-50%, -50%); /* added for centering */
+  background: linear-gradient(45deg, 
+    rgba(67, 26, 255, 1) 0%, 
+    rgba(236, 236, 236, 0) 25%, 
+    rgba(67, 26, 255, 1) 50%, 
+    rgba(67, 26, 255, 1) 75%, 
+    rgba(67, 26, 255, 1) 100%) no-repeat;
+  background-size: 710%;
+  background-attachment: fixed;
+  animation: gradientAnim 5s ease infinite, move 5s ease-in-out infinite; /* combined animations */
+}
+
+
+@keyframes move {
+  0% {
+    transform: translate(-50%, -50%) translateX(-10px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateX(20px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(-10px);
+  }
+}
+
+@keyframes gradientAnim {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*
+
+.x{
+  width: 50px;
+  height:50px;
+  background-color: black;
+  margin-top:;
+  
+}
+*/
+
+
+
+
+
+
+/*2nd start*/
+
+
+
+
+
+#transbox2 {
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
+  margin-bottom: 3%;
+  height: 160px;
+  width: 93%;
+  box-shadow: 4px #00000014;
+  border-radius: 20px;
+  background-color: #FFF4F40D;
+}
+
+
+
+.bdypic {
+  width: 280px;
+  overflow: hidden;
+  height: 140px;
+  background-color: #0C0C0C14;
+  border-radius: 12px;
+  margin-top:2% ;
+  margin-left:3%;
+  background-size: contain;
+  background-image: url('https://www.dropbox.com/scl/fi/amoafd7vuh51uecq0j18h/anime-boy-pictures-ikoa2ot553mv58hf.jpg?rlkey=70vwz92ny3f6nenybrdl5c0vz&st=mjmc7711&dl=1');
+}
+
+
+
+
+
+/* 3rd start*/
+
+
+
+#trans3{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  height: 410px;
+  width: 93%;
+  border-radius: 14px;
+  background-color: #FFFFFF1A;
+}
+
+  
+  .longtext {
+  display:flex;
+  width: 349px;
+  height: 380px;
+  border-radius: 7px; 
+  margin-left:0.5%;
+  margin-left:-0.5%;
+  margin-top: 4%;
+   background: linear-gradient(90deg, rgba(255, 144, 5, 0.56) 0%, hsla(323, 100%, 51%, 0.58) 100%);
+}
+
+
+.ltext{
+  text-align: center;
+  color:rgba(0, 0, 0, 0.96);
+  font-style: italic;
+  text-shadow: 
+     0 0 5px #FFFFFF, 
+     0 0 5px #FFFFFF, 
+     0 0 5px #FFFFFF, 
+     0 0 2px #FFFFFF, 
+     0 0 2px #FFFDFD, 
+     0 0 4px #FFFFFF, 
+     0 0 4px #FFFEFE;
+}
+
+
+#battery-level {
+  display:flex;
+  font-size: 10px;
+  place-items:center;
+  height: 16px;
+  width: 39px;
+  font-weight: bold;
+  color: #000000;
+  background-color: #DFFF1B;
+  padding:0px;
+  border-radius: 10%;
+  top: 45px;
+  margin-left:5px;
+}
+
+
+.heart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width:2px ;
+  height:2px;
+  color: white;
+  font-family: cursive;
+  font-size: 1rem;
+  transform: translateY(0);
+  text-shadow: 
+     0 0 5px #FFFFFF, 
+     0 0 5px #FFFFFF, 
+     0 0 5px #FFFFFF, 
+     0 0 2px #FFFFFF, 
+     0 0 2px #FFFDFD, 
+     0 0 4px #FFFFFF, 
+     0 0 4px #FFFEFE;
+  animation: fall 5s linear forwards;
+}
+
+@keyframes fall {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    transform: translateX(-100vw) translateY(100vh);
+  }
+}
+
+.mamba{
+text-align:center;
+font-size: 13px;
+margin-top:2%;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+
+
